@@ -1,0 +1,113 @@
+@import "bootstrap";
+@import "products";
+
+.left-label{
+  text-align: initial;
+}
+
+.center{
+  text-align: center;
+}
+.webkit-center{
+  text-align: -webkit-center;
+}
+
+.navbar-custom {
+  border-radius: 0px;
+  z-index: 16;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0, .4);
+}
+
+.container{
+  padding: 10px
+}
+
+.justify{
+  text-align: justify;
+}
+.right{
+  text-align: right;
+}
+
+nav.logged_in_nav {
+  border-top: solid thin #bfb;
+  padding: 0.354em 0;
+  margin-top: 0.354em;
+  input[type="submit"] {
+    // Make the logout button look like a // link, so it matches the nav style
+    background: none;
+    border: none;
+    color: #bfb;
+    font-size: 1em;
+    letter-spacing: 0.354em;
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+  }
+  input[type="submit"]:hover {
+    color: white;
+  }
+}
+
+.locale {
+  float: right;
+  margin: 1em;
+}
+
+.list_image {
+  width: 90px;
+  height: 70px;
+}
+
+.list_store {
+  width: 380px;
+  height: 260px;
+}
+
+.notice, #notice {
+  background: #ffb;
+  border-radius: 0.5em;
+  border: solid 0.177em #882;
+  color: #882;
+  font-weight: bold;
+  margin-bottom: 1em;
+  padding: 1em 1.414em;
+  text-align: center;
+}
+
+#error_explanation {
+  background-color: white;
+  border-radius: 1em;
+  border: solid thin red;
+  margin-bottom: 0.5em;
+  padding: 0.5em;
+  width: 100%;
+  h2 {
+    background: none;
+    color: red;
+    font-size: 1.41em;
+    line-height: 1.41em;
+    padding: 1em;
+  }
+  ul {
+    margin-top: 0;
+    li {
+      color: red;
+      font-size: 1em;
+    }
+  }
+}
+.field_with_errors {
+  background: none;
+  color: red;
+  width: 100%;
+  label {
+    font-weight: bold;
+  }
+  label::before {
+    content: "! ";
+  }
+  input,textarea {
+    background: pink;
+  }
+}

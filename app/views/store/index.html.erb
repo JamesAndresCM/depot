@@ -1,0 +1,35 @@
+<% if notice %>
+  <aside id="notice"><%= notice %></aside>
+<% end %>
+<h1><%= t('.title_html') %></h1>
+
+<div class="container mb-5">
+  <div class="container">
+    <% cache @products do %>
+      <% @products.each do |product| %>
+        <% cache product do %>
+            <div class="card card-block">
+              <div class="card-header">
+                <h5 class="card-title"><%= product.title %></h5>
+              </div>
+              <div class="row">
+                <div class="col-md-6 ">
+                  <%= image_tag(product.image_url,class: 'img-fluid list_store')%>
+                </div>
+                <div class="col-md-6 px-3">
+                  <div class="card-block px-3">
+                    <p class="card-text" style="text-align: justify"><%= sanitize product.description[0..240].capitalize, tags: %w(strong em a p b), attributes: %w(href) %>.[…]</p>
+                    <div class="price">
+                      <%= number_to_currency(product.price) %>
+                      <%= button_to t('.add_html'), line_items_path(product_id: product, locale: I18n.locale), remote: true, class:'btn btn-sm btn-success mb-2' %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          <br>
+        <% end %>
+      <% end%>
+    <% end %>
+  </div>
+</div>
